@@ -1,11 +1,34 @@
+import re
+
 #opens the document
 f = open('input_1A.txt', 'r').read()
 #splits the teixt in to array
 with open('input_1A.txt', 'r') as file:
     text = f.split("\n")
 
+word_to_digits = {
+    'zero': '0',
+    'one': '1',
+    'two': '2',
+    'three': '3',
+    'four': '4',
+    'five': '5',
+    'six': '6',
+    'seven': '7',
+    'eight': '8',
+    'nine': '9'
+}
+word = text[0].split()
+digits = [word_to_digits[x] for x in word]
+
+print(text[0])
+print(word)
+print(digits)
+
+
+
 inputArray = text
-print(text)
+
 
 inputNumbers = []
 
