@@ -1,5 +1,10 @@
 
-def text_to_numbers(text):
+
+with open('input_1A.txt', 'r') as file:
+    inputArray = file.read().split("\n")
+
+
+def text_to_numbers(string):
     # Define a dictionary to map text representations of numbers to their numerical values
     number_dict = {
         'zero': '0',
@@ -16,10 +21,13 @@ def text_to_numbers(text):
 
     # Replace textual representations with numerical values
     for word, number in number_dict.items():
-        text = text.replace(word, number)
+        text = string.replace(word, number)
     return text
 
-# Test the function
-text = 'fsadsevenfsadfas'
-result = text_to_numbers(text)
-print(result)  # Output: 'fsad7fsadfas'
+inputArray_numbers = []
+
+for i in inputArray:
+    text_to_numbers(i)
+    inputArray_numbers.append(text_to_numbers(i))
+
+print(inputArray_numbers)
